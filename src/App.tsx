@@ -1,11 +1,10 @@
 import "./App.css";
+import Input from "./Compoents/common/Input";
 
 function App() {
-
-
   return (
     <>
-      <h1>HeyGym</h1>
+      <Input label="username" />
     </>
   );
 }
