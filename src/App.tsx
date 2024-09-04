@@ -4,7 +4,9 @@ import Input from "./Compoents/common/Input";
 function App() {
   return (
     <>
-      <Input label="username" />
+      <div className="w-screen h-screen justify-center items-center flex">
+        <Input label="username" />
+      </div>
     </>
   );
 }
