@@ -1,13 +1,12 @@
 import "./App.css";
-import Input from "./Compoents/common/Input";
+import Navigation from "./Compoents/common/Header/Navigation";
+
 
 function App() {
   return (
-    <>
-      <div className="w-screen h-screen justify-center items-center flex">
-        <Input label="username" />
-      </div>
-    </>
+    <div className="h-full flex  items-end bg-gray-900">
+      <Navigation />
+    </div>
   );
 }
 
