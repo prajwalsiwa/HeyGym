@@ -1,11 +1,11 @@
 import "./App.css";
-import Navigation from "./Compoents/common/Header/Navigation";
-
+import AuthForm from "./Compoents/Login";
+// import MobileNavigation from "./Compoents/common/Header/MobileNavigation";
 
 function App() {
   return (
-    <div className="h-full flex  items-end bg-gray-900">
-      <Navigation />
+    <div className="flex h-screen">
+      <AuthForm />
     </div>
   );
 }
