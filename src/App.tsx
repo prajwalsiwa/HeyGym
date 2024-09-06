@@ -1,11 +1,11 @@
 import "./App.css";
-import Input from "./Compoents/common/Input";
+import AuthForm from "./Compoents/Login";
 
 function App() {
   return (
-    <>
-      <Input label="username" />
-    </>
+    <div className="flex h-screen bg-gray-600 items-end">
+      <AuthForm />
+    </div>
   );
 }
 
