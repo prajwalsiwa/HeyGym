@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-// import gym from 'src/assests/gym.jpg'
 import gym from "@/assests/gym.jpg";
 
-const AuthForm: React.FC = () => {
+const Login: React.FC = () => {
   const [passwordValue, setPasswordValue] = useState("");
 
   const [isVisible, setIsVisible] = useState(false);
@@ -64,4 +63,4 @@ const AuthForm: React.FC = () => {
   );
 };
 
-export default AuthForm;
+export default Login;

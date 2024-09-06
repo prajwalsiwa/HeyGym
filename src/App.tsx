@@ -1,11 +1,10 @@
 import "./App.css";
-import AuthForm from "./Compoents/Login";
+import appRoutes from "./routes/appRoutes";
+import generateRoutes from "./routes/generateRoutes";
 
 function App() {
   return (
-    <div className="flex h-screen bg-gray-600 items-end">
-      <AuthForm />
-    </div>
+    <div className="w-full h-full">{generateRoutes({ routes: appRoutes })}</div>
   );
 }
 
