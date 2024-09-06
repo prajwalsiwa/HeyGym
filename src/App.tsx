@@ -1,10 +1,9 @@
 import "./App.css";
 import AuthForm from "./Compoents/Login";
-// import MobileNavigation from "./Compoents/common/Header/MobileNavigation";
 
 function App() {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-gray-600 items-end">
       <AuthForm />
     </div>
   );
