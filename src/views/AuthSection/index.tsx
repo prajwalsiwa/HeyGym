@@ -1,4 +1,4 @@
-import Login from "@/Compoents/AuthSection/Login";
+import Login from "@/Components/AuthSection/Login";
 
 export default function AuthSection() {
   return (

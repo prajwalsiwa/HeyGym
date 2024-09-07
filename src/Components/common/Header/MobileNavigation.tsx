@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MobileNavigation = () => {
   const Menus = [
@@ -8,7 +9,18 @@ const MobileNavigation = () => {
     { name: "Register", icon: "app_registration", dis: "translate-x-48" },
     { name: "Settings", icon: "settings", dis: "translate-x-64" },
   ];
+
+  const navigate = useNavigate();
   const [active, setActive] = useState(0);
+
+  const handleMenuClick = (i: number, name: string) => {
+    console.log(name)
+    if(name==='Home'){
+      navigate('/')
+    }
+    navigate(`./${name.toLocaleLowerCase()}`);
+    setActive(i);
+  };
   return (
     <div className="bg-white w-full max-h-[4.4rem] px-6 rounded-t-xl">
       <ul className="flex relative  ">
@@ -29,7 +41,9 @@ const MobileNavigation = () => {
           <li key={i} className="w-16 justify-center flex ">
             <a
               className="flex flex-col text-center pt-6"
-              onClick={() => setActive(i)}
+              onClick={() => {
+                handleMenuClick(i, menu.name);
+              }}
             >
               <span
                 className={`text-2xl cursor-pointer duration-500 material-symbols-outlined  ${

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 interface ILabelProps {
-  children: ReactNode;
-  htmlFor?: string | number;
+  children?: ReactNode;
+  htmlFor: string | number;
   required?: boolean;
 }
 
