@@ -11,23 +11,15 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="forms-container px-12 relative  flex justify-center items-center w-full h-full top-0 left-0">
-      <div className="absolute flex justify-center top-0 border-b-2 rounded-b-full w-full h-64 gap-4 flex-col bg-red-500 items-center">
-        <img src={gym} alt="" />
-        <h2 className="text-4xl font-extrabold dark:text-white">
-          {" "}
-          <span>Hey Gym</span>
-        </h2>{" "}
-        <div className="w-64 flex justify-center items-center text-center dark:text-white">
-          <span className="font-semibold text-lg">
-            Push harder than yesterday if you want a different tomorrow.
-          </span>
-        </div>
+    <div className="forms-container  relative flex-col w-screen  flex gap-36 sm:flex-row  items-center  h-full top-0 left-0">
+      <div className="flex flex-col justify-center top-0 w-full  border h-64 sm:h-full sm:w-[60%] gap-4  items-center">
+        <img src={gym} alt="" className="w-full h-full object-cover" />
       </div>
-      <form className="flex justify-center flex-col items-center">
-        <h2 className="text-3xl text-gray-700 mb-4">Sign in</h2>
-        <div className="input-field flex items-center bg-gray-200 rounded-full px-4 py-2 mb-4 w-full max-w-md">
-          <i className="material-symbols-outlined text-gray-400 mr-4">person</i>
+
+      <form className="flex justify-center flex-col items-center px-12 sm:px-52 sm:w-[40%] ">
+        <h2 className="text-3xl text-white mb-4">Sign in</h2>
+        <div className="input-field flex items-center bg-gray-200 rounded-full px-4 py-2 mb-4 min-w-72 max-w-md">
+          <i className="material-symbols-outlined text-gray-600 mr-4">person</i>
           <input
             type="text"
             placeholder="Username"
@@ -35,8 +27,8 @@ const Login: React.FC = () => {
             required
           />
         </div>
-        <div className="input-field flex items-center bg-gray-200 rounded-full px-4 py-2 mb-4 w-full max-w-md">
-          <i className="material-symbols-outlined text-gray-400 mr-4">lock</i>
+        <div className="input-field flex items-center bg-gray-200 rounded-full px-4 py-2 mb-4 w-full min-w-72 max-w-md">
+          <i className="material-symbols-outlined text-gray-600 mr-4">lock</i>
           <input
             type={`${isVisible ? "text" : "password"}`}
             placeholder="Password"
@@ -46,15 +38,24 @@ const Login: React.FC = () => {
             value={passwordValue}
           />
           <i
-            className="material-symbols-outlined text-gray-500"
+            className="material-symbols-outlined text-gray-600"
             onClick={() => setIsVisible(!isVisible)}
           >
             {isVisible ? "visibility" : "visibility_off"}
           </i>
         </div>
+        <div className="flex gap-2  pl-4 text-white justify-start items-center w-full">
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            className=" bg-gray-500 accent-gray-400 border border-black checked:bg-gray-700 w-4 h-4 rounded f"
+          />
+          <span className="text-sm w-44">Remember me</span>
+        </div>
         <button
           type="submit"
-          className="btn bg-rose-500 text-white font-bold rounded-full py-2 px-8 transition-colors hover:bg-rose-600"
+          className="btn mt-6 bg-rose-500 text-white font-bold rounded-full py-2 px-8 transition-colors hover:bg-rose-600"
         >
           Login
         </button>
