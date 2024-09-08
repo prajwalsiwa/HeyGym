@@ -4,12 +4,13 @@ interface ILabelProps {
   children?: ReactNode;
   htmlFor: string | number;
   required?: boolean;
+  className?: string;
 }
 
-export default function Label({ children, htmlFor, required }: ILabelProps) {
+export default function Label({ children, htmlFor, required, className }: ILabelProps) {
   return (
     <label
-      className="text-sm text-grey-800"
+      className={`text-sm text-grey-800 ${className}`}
       htmlFor={htmlFor?.toString()}
     >
       {children}
