@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className="dashboard-container  bg-gray-500 flex flex-col overflow-hidden justify-between h-screen">
-      <div className={`flex overflow-hidden  ${
-          pathname === "/login" ? "block" : "h-[calc(100vh-4.4rem)]"
+      <div className={`flex  ${
+          pathname === "/login" ? "block" : "h-[calc(100vh-4.4rem)] overflow-y-auto "
         }`}>
         {generateRoutes({ routes: appRoutes })}
       </div>
