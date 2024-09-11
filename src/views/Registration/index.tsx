@@ -29,7 +29,7 @@ export default function Registration() {
         Hey Gym
       </h1>
       <div className="bg-rose-600 h-[50%]  w-full px-4 pt-6 pr-10">
-        <div className="text-white absolute z-10 p-4 pt-6 justify-start items-start  h-[87%] border border-gray-300    w-[92%] rounded-xl  bg-white flex  flex-col gap">
+        <div className="text-white absolute z-10 p-4 pt-6 justify-between items-start  h-[85%] border border-gray-300    w-[92%] rounded-xl  bg-white flex  flex-col gap">
           <div>
             <h1 className="text-2xl font-medium text-black">
               Welcome to HeyGym
@@ -38,7 +38,7 @@ export default function Registration() {
               Let's get started
             </span>
           </div>
-          <div className="w-full h-[35rem] pt-6 px-2  flex flex-col gap-10 overflow-y-auto overflow-x-hidden items-start justify-start">
+          <div className="w-full h-[26rem] pt-6 px-2  flex flex-col gap-10 overflow-y-auto overflow-x-hidden items-start justify-start">
             <div className="flex gap-2 w-full">
               <Input label="First Name" className="w-full" required />
               <Input label="Last Name" className="w-full" required />
