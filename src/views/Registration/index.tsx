@@ -1,3 +1,4 @@
+import { Button } from "@/Components/common/Button";
 import Label from "@/Components/common/FormUi/Label";
 import Input from "@/Components/common/Input";
 import { useState } from "react";
@@ -6,115 +7,136 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Registration() {
   const [startDate, setStartDate] = useState<Date | null>(null);
-  // const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  // const [preview, setPreview] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-
-      console.log(file)
-      // setSelectedImage(file);
-      // const previewUrl = URL.createObjectURL(file);
-      // setPreview(previewUrl);
+      console.log(file);
     }
   };
 
   const handleDeleteImage = () => {
-    console.log("handle delete")
-    // setSelectedImage(null);
-    // setPreview(null);
+    console.log("handle delete");
   };
 
   const handleDateChange = (date: Date | null) => {
-
-    setStartDate(date)
-    
-  }
+    setStartDate(date);
+  };
 
   return (
-    <div className="text-white py-10 px-2 w-full  bg-gray-700 overflow-auto flex justify-center items-center flex-col gap-10">
-      <h1 className="text-2xl">Register Here</h1>
-
-      <div className="flex gap-2">
-        <Input label="First Name" required />
-        <Input label="Last Name" required />
-      </div>
-      <div className="flex gap-2">
-        <Input label="Address" required />
-        <Input label="Contact" type="number" required />
-      </div>
-      <div className="w-full">
-        <Input label="Email" type="email" required />
-      </div>
-      <div className="gender flex flex-col justify-center items-center">
-        <h2 className="text-lg font-semibold">Select your gender</h2>
-        <div className="max-w-sm mx-auto mt-2 w-full rounded-lg shadow-md flex gap-10">
-          <Input label="Male" type="radio" name="gender" value="male" />
-          <Input label="Female" type="radio" name="gender" value="female" />
-          <Input label="Other" type="radio" name="gender" value="other" />
-        </div>
-      </div>
-      <div className="flex gap-2 justify-end items-end">
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="Join Date" className="text-lg" required>
-            Membership Start Date
-          </Label>
-          <DatePicker
-            selected={startDate}
-            onChange={handleDateChange}
-            dateFormat="yyyy/MM/dd"
-            className="rounded-md p-2 w-full bg-gray-700 text-white border border-gray-500"
-            placeholderText="Select Date"
-          />
-        </div>
-        <div>
-          <Label htmlFor="Duration" className="text-lg" required>
-            Membership Duration
-          </Label>
-          <Input
-            label="Duration"
-            required
-            placeholder="Months"
-            labelClassName="hidden"
-          />
-        </div>
-      </div>
-      <div className="w-full flex flex-col  relative items-start justify-start ">
-        <Label
-          htmlFor="Upload Photo"
-          className="text-lg font-semibold mb-2 text-white"
-          required
-        >
-          Upload Photo
-        </Label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          className="mb-4 border border-0.5 rounded-md p-1 w-full"
-        />
-        <i
-          onClick={handleDeleteImage}
-          className="absolute material-symbols-outlined bottom-[1.25rem] right-2 text-red-500 rounded-full p-1"
-          aria-label="Delete image"
-        >
-          delete
-        </i>
-      </div>
-      <div className="flex gap-4">
-        <div>
-          <button className="w-[10rem] text-md  h-[2.75rem] py-[0.62rem] px-[1.25rem] gap-[0.62rem]  rounded-[0.5rem] border-solid border-[#1D49A7] bg-white text-[#1D49A7] font-semibold text-[0.875rem]">
-            Submit
-          </button>
-        </div>
-        <div className="relative ">
-          <i className="material-symbols-outlined absolute text-blue-900 top-2 left-2">
-            restart_alt
-          </i>
-          <button className="w-[10rem] text-md  h-[2.75rem]  py-[0.62rem] px-[1.25rem] gap-[0.62rem] pl-8 rounded-[0.5rem] border-solid border-[#1D49A7] bg-white text-[#1D49A7] font-semibold text-[0.875rem]">
-            <span className="w-full">Clear all Filters</span>
-          </button>
+    <div className="h-full w-full relative overflow-hidden bg-white">
+      <h1 className="text-3xl text-rose-600 font-medium pt-4 px-4 pb-2">
+        Hey Gym
+      </h1>
+      <div className="bg-rose-600 h-[50%]  w-full px-4 pt-6 pr-10">
+        <div className="text-white absolute z-10 p-4 pt-6 justify-between items-start  h-[85%] border border-gray-300    w-[92%] rounded-xl  bg-white flex  flex-col gap">
+          <div>
+            <h1 className="text-2xl font-medium text-black">
+              Welcome to HeyGym
+            </h1>
+            <span className="text-gray-700 text-lg font-medium">
+              Let's get started
+            </span>
+          </div>
+          <div className="w-full h-[26rem] pt-6 px-2  flex flex-col gap-10 overflow-y-auto overflow-x-hidden items-start justify-start">
+            <div className="flex gap-2 w-full">
+              <Input label="First Name" className="w-full" required />
+              <Input label="Last Name" className="w-full" required />
+            </div>
+            <div className="flex gap-2 w-full">
+              <Input label="Address" className="w-full" required />
+              <Input
+                label="Contact"
+                className="w-full"
+                type="number"
+                required
+              />
+            </div>
+            <div className="w-full">
+              <Input label="Email" type="email" required />
+            </div>
+            <div className="gender flex flex-col justify-center w-full items-center">
+              <h2 className="text-md font-semibold text-gray-700">
+                Select your gender
+              </h2>
+              <div className="max-w-sm mx-auto mt-2 w-full justify-center rounded-lg shadow-md flex gap-10">
+                <Input label="Male" type="radio" name="gender" value="male" />
+                <Input
+                  label="Female"
+                  type="radio"
+                  name="gender"
+                  value="female"
+                />
+                <Input label="Other" type="radio" name="gender" value="other" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="flex flex-col w-full">
+                <Label
+                  htmlFor="Join Date"
+                  className="text-lg text-gray-500"
+                  required
+                >
+                  Membership Start Date
+                </Label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={handleDateChange}
+                  dateFormat="yyyy/MM/dd"
+                  className="rounded-md p-2 w-full bg-white text-white border border-gray-500"
+                  placeholderText="Select Date"
+                />
+              </div>
+              <div className="flex gap-2 justify-start items-start h-full w-full">
+                <div className="h-full justify-end items-end w-full  ">
+                  <Label
+                    htmlFor="Duration"
+                    className="text-lg text-gray-500"
+                    required
+                  >
+                    Membership Duration
+                  </Label>
+                  <Input
+                    label="Duration"
+                    required
+                    placeholder="Months"
+                    labelClassName="hidden"
+                    className="!w-full"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex flex-col  relative items-start justify-start ">
+              <Label
+                htmlFor="Upload Photo"
+                className="text-lg text-gray-500 font-medium mb-2 "
+                required
+              >
+                Upload Photo
+              </Label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="mb-4 border border-0.5 border-gray-500 rounded-md p-1 w-full"
+              />
+              <i
+                onClick={handleDeleteImage}
+                className="absolute material-symbols-outlined bottom-[1.25rem] right-2 text-red-500 rounded-full p-1"
+                aria-label="Delete image"
+              >
+                delete
+              </i>
+            </div>
+          </div>
+          <div className="flex flex-col w-full gap-4">
+            <Button className="bg-rose-600  rounded-xl py-2 text-md font-medium hover:bg-rose-700  ">
+              Register Now
+            </Button>
+            <Button className="bg-rose-600  rounded-xl py-2 font-medium hover:bg-rose-700 ">
+              Reset Form
+            </Button>
+          </div>
         </div>
       </div>
     </div>

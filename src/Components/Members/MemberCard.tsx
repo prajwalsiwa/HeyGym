@@ -21,13 +21,13 @@ function MemberCard({
   return (
     <div
       className="border border-gray-300 w-full h-24   rounded-xl p-2 px-3
-    flex  items-center justify-between "
+    flex  items-center justify-between"
     >
       <div className="flex gap-2 h-full items-center">
         <div className="image-section h-16 w-16  rounded-lg overflow-hidden">
           <img src={image} alt="" className="w-full h-full" />
         </div>
-        <div className="description h-full py-1 flex flex-col gap-0 ">
+        <div className="description h-full w-full py-1 flex flex-col gap-0 ">
           <div className="">
             <span className="text-lg font-medium">{name}</span>
           </div>
