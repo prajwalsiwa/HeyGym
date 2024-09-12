@@ -5,7 +5,7 @@ const MobileNavigation = () => {
   const Menus = [
     { name: "Home", icon: "home", dis: "translate-x-0" },
     { name: "Members", icon: "group", dis: "translate-x-16" },
-    { name: "Alert", icon: "notifications", dis: "translate-x-32" },
+    { name: "Report", icon: "report", dis: "translate-x-32" },
     { name: "Register", icon: "app_registration", dis: "translate-x-48" },
     { name: "Settings", icon: "settings", dis: "translate-x-64" },
   ];
@@ -22,7 +22,7 @@ const MobileNavigation = () => {
     setActive(i);
   };
   return (
-    <div className="bg-white w-full max-h-[4.4rem] px-6 rounded-t-xl">
+    <div className="border absolute bottom-2 h-full border-slate-100 pb-2 bg-slate-100 z-40 w-full max-h-[4.7rem] px-6 rounded-xl">
       <ul className="flex relative  ">
         <span
           className={`bg-rose-600 duration-500 ${Menus[active].dis} border-4 border-gray-900 h-16 w-16 absolute
@@ -38,7 +38,7 @@ const MobileNavigation = () => {
           ></span>
         </span>
         {Menus.map((menu, i) => (
-          <li key={i} className="w-16 justify-center flex ">
+          <li key={i} className="w-16 justify-center flex pb-2 ">
             <a
               className="flex flex-col text-center pt-6"
               onClick={() => {
