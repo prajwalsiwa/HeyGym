@@ -8,14 +8,14 @@ function App() {
   const { pathname } = useLocation();
 
   return (
-    <div className="dashboard-container  bg-gray-500 flex flex-col overflow-hidden justify-between h-screen">
+    <div className="dashboard-container relative  bg-white flex flex-col overflow-hidden justify-between h-screen">
       <div className={`flex  ${
-          pathname === "/login" ? "block" : "h-[calc(100vh-4.4rem)] overflow-y-auto "
+          pathname === "/login" ? "block" : "h-full overflow-y-auto "
         }`}>
         {generateRoutes({ routes: appRoutes })}
       </div>
       <div
-        className={`navbar h-[4.4rem] ${
+        className={`navbar h-[4.4rem]  ${
           pathname === "/login" ? "hidden" : "block"
         }`}
       >
