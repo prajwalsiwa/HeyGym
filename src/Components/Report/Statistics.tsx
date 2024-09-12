@@ -1,4 +1,4 @@
-import ToggleSwitch from "./ToggleSwich";
+import ToggleSwitch from "./DateSwitch";
 
 function Statistics() {
   return (
