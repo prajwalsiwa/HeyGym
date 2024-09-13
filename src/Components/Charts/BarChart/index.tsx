@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   Text,
   Legend,
+  Label,
 } from 'recharts';
 import { ChartFills } from '../constants'; 
 import { IChartProps } from '../types'; 
@@ -75,6 +76,7 @@ export default function CustomBarChart({
   fills = ChartFills,
   scrollable = false,
   width = '150%',
+  yAxisLabel
 }: IChartProps) {
   // const keys = Object.keys(data.length > 0 ? data[0] : {});
   const dataObject = data.length > 0 ? data[0] : {};
@@ -114,8 +116,20 @@ export default function CustomBarChart({
           style={{
             fontSize: '12px',
             color: '#212121',
+      
           }}
           tickLine={false}
+          label={ <Label
+            value={yAxisLabel}
+            angle={-90} // Rotate the label 90 degrees
+            position="insideLeft" // Position inside the left side of the axis
+            offset={15}
+            dy={35}
+            
+             // Offset from the axis line
+            style={{ fontSize: '12px', fill:'#4B55630'  }} // Style the label
+          />}
+        
         />
         {keys.length > 1 && <Legend />}
 

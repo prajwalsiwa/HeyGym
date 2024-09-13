@@ -5,6 +5,7 @@ export interface IChartProps {
   fills?: string[];
   scrollable?: boolean;
   width?: string;
+  yAxisLabel?: string
 }
 
 export type ChartTypes =
