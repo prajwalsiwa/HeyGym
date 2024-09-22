@@ -1,41 +1,51 @@
 import ReportCard from "@/Components/Dashboard/ReportCard";
+import Icon from "@/Components/common/Icon";
 import reportCardList from "@/constants/reportCardList";
 
 export default function Dashboard() {
   return (
-    <div className="px-8 bg-slate-100 w-full">
-      {/* upcoming expiry report  */}
-      <div className="">
-        <h5 className="">Upcoming Expiry Report</h5>
-        <div className="grid gap-10 grid-cols-2">
-          {reportCardList.map((report) => (
-            <ReportCard
-              members={report.members}
-              description={report.description}
-            />
-          ))}
-        </div>
+    <div className="flex flex-col gap-2">
+      <div className="w-full gap-2 h-[8rem]   bg-gradient-to-r flex  pl-4 items-end pb-4  from-rose-600 from-20% to-rose-900 to-80%">
+        <Icon name="menu" className="text-white !text-2xl font-bold"></Icon>
+        <h3 className="text-white">Dashboard</h3>
       </div>
-      {/* registration report  */}
-      <div>
-      <h5 className="">Registration Report</h5>
-        <div className="grid gap-10 grid-cols-2">
-          {reportCardList.map((report) => (
-            <ReportCard
-              members={report.members}
-              description={report.description}
-            />
-          ))}
+      <div className=" bg-slate-100 px-4 w-full justify-start gap-8 flex flex-col">
+        {/* upcoming expiry report  */}
+        <div className="flex justify-between gap-2  flex-col w-full">
+          <h5 className="w-full ">Upcoming Report</h5>
+          <div className="flex justify-between gap-4 flex-wrap w-full ">
+            {reportCardList.map((report) => (
+              <ReportCard
+                members={report.members}
+                description={report.description}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      {/* payment report  */}
-      <div className="grid gap-10 grid-cols-2">
-        {reportCardList.map((report) => (
-          <ReportCard
-            members={report.members}
-            description={report.description}
-          />
-        ))}
+        {/* registration report  */}
+        <div className="flex justify-between gap-2  flex-col w-full">
+          <h5 className="w-full ">Upcoming Report</h5>
+          <div className="flex justify-between gap-4 flex-wrap w-full ">
+            {reportCardList.map((report) => (
+              <ReportCard
+                members={report.members}
+                description={report.description}
+              />
+            ))}
+          </div>
+        </div>
+        {/* payment report  */}
+        <div className="flex justify-between gap-2  flex-col w-full">
+          <h5 className="w-full ">Upcoming Report</h5>
+          <div className="flex justify-between gap-4 flex-wrap w-full ">
+            {reportCardList.map((report) => (
+              <ReportCard
+                members={report.members}
+                description={report.description}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
