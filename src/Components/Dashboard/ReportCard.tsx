@@ -21,7 +21,7 @@ const ReportCard = forwardRef<HTMLDivElement, IRoundedContainerProps>(
     return (
       <div
         ref={ref}
-        className={`rounded-xl flex justify-center gap-1 items-start flex-col  bg-white p-4   w-fit h-fit transition-all duration-200 ${className}`}
+        className={`rounded-xl flex justify-center gap-1 items-start flex-col  bg-white p-4   sm:w-fit sm:h-fit w-[11rem] border border-gray-300 transition-all duration-200 ${className}`}
         {...restProps}
       >
         <span className="text-orange-500 font-bold">{members}</span>
