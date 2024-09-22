@@ -14,11 +14,11 @@ const MobileNavigation = () => {
   const [active, setActive] = useState(0);
 
   const handleMenuClick = (i: number, name: string) => {
-    console.log(name)
-    if(name==='Home'){
-      navigate('/')
+    if (name === "Home") {
+      navigate("/");
+    } else {
+      navigate(`./${name.toLocaleLowerCase()}`);
     }
-    navigate(`./${name.toLocaleLowerCase()}`);
     setActive(i);
   };
   return (
